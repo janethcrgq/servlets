@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nébula music - Registro</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <img src="imgs/nebula-03.svg" alt="Nébula logo" height="80">
+        <h1>Registro de usuarios</h1>
+    </header>
+
+    <main>
+        <section>
+            <form name="form-nuevos-usuarios" action="/NubulaMusicWebApplication/registro" method="post"
+                enctype="application/x-www-form-urlencoded">
+                <section name="titulo">
+                    <h3> Nuevo usuario </h3>
+                    <span> Completa la infromacion y envia tus datos</span>
+                </section>
+
+                <section name="nombre">
+                    <label for="txt_name"> nombre </label>
+                    <input type="text" name="txt_name" id="txt_name" required minlength="10" maxlength="200">
+                    <span>Tu nombre completo</span>
+                </section>
+
+                <section name="correo">
+                    <label for="txt_email"> correo </label>
+                    <input type="email" name="txt_email" id="txt_email" required minlength="10" maxlength="100"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <span>Tu correo completo</span>
+                </section>
+
+                <section name="contrasena">
+                    <label for="txt_password"> contrasena </label>
+                    <input type="password" name="txt_password" id="txt_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="minimo 8 caracteres, una mayuscula y una minuscula">
+                    <span> Tu contraseena completo</span>
+                </section>
+
+                <section name="pseudonimo">
+                    <label for="txt_pseudonimo"> pseudonimo> </label>
+                    <input type="text" name="txt_pseudonimo" id="txt_pseudonimo" required>
+                    <span> Tu pseudonimo o alias </span>
+                </section>
+
+                <section name="estado">
+                    <label for="txt_estado"> Estado </label>
+                    <div>
+                        <input type="radio" value="activo" id="rad_activo" name="txt_estado" required>
+                        <label for="rad_activo"> Activo </label>
+                        <input type="radio" value="inactivo" id="rad_inactivo" name="txt_estado" required>
+                        <label for="rad_inactivo"> Inactivo </label>
+                        <input type="radio" value="pendiente" id="rad_pendiente" name="txt_estado" required>
+                        <label for="rad_pendiente"> Pendiente </label>
+                    </div>
+                </section>
+
+
+
+                <div name="cuenta">
+                    <label for="sel_cuenta"> Cuenta </label>
+                    <select id="sel_cuenta" name="sel_cuenta" required>
+                        <option value=""> - Selecciona - </option>
+                        <option value="gratis"> Gratis </option>
+                        <option value="basica"> Basica </option>
+                        <option value="premium"> Premium </option>
+                    </select>
+                    <span> Tu tipo de cuenta para desbloquear características </span>
+                </div>
+                <div name="fecha_nacimiento">
+                   <label for="txt_fecha_nacimiento"> Fecha de nacimiento </label>
+                    <input type="date" id="txt_fecha_nacimiento" name="txt_fecha_nacimiento" required>
+                    <span> Tu fecha de nacimiento </span>
+                </div>
+                <div name="terminos">
+                    <label for="chk_terminos"> Aceptar terminos y condiciones </label>
+                    <input name="chk_terminos" id="chk_terminos" type="checkbox" value="aceptado" required>
+                    <span> Debes aceptar antes de poder registrar tu cuenta </span>
+                </div>
+
+                <div name="options">
+                    <button type="submit"> Registrar </button>
+                     <button type="reset"> Cancelar </button>
+                </div>
+             </form>
+         </section>
+    </main>
+
+
+    <footer>
+        <div>
+            Síguenos en nuestras redes.
+            <div>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.tiktok.com" target="_blank">Tiktok</a>
+            </div>
+        </div>
+
+        Copyright Nébula 2025.
+    </footer>
+
+</body>
+
+</html>

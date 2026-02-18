@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nébula music - Iniciar sesión</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <img src="imgs/nebula-03.svg" alt="Nébula logo" height="80">
+            <h1>Iniciar sesión</h1>
+        </header>
+
+        <main>
+            <section>
+                <form name="form_inciar_sesion" action="/NubulaMusicWebApplication/autenticacion" method="post" enctype="application/x-www-form-urlencoded">
+                    <section>
+                        <span> utiliza tus credenciales para iniciar sesion </span>
+                    </section>
+
+                    <section name="correo">
+                        <label for="correo"> Correo </label>
+                        <input type="email" id="correo" name="correo" required minlength="10" maxlength="100" autocomplete= "email">  
+                    </section>
+                    <section name="contrasenia">
+                        <label for="contrasena"> contrasena </label>
+                        <input type="password" name="contrasenia" id="contrasenia" required autocomplete="off">
+                    </section>
+                    <section name="opciones">
+                        <p> Aun no tienes una cuenta?  <a href="./registro.html"> Registrate aqui </a> </p>
+                        <button type="submit"> Iniciar sesion </button>
+                        <button type="reset"> Limpiar formulario </button>
+
+                    </section>
+
+                </form>
+                  
+            </section>
+        </main>
+
+        <footer>
+            <div>
+                Síguenos en nuestras redes.
+                <div>
+                    <a href="www.instagram.com" target="_blank">Instagram</a>
+                    <a href="www.facebook.com" target="_blank">Facebook</a>
+                    <a href="www.tiktok.com" target="_blank">Tiktok</a>
+                </div>
+            </div>
+
+            Copyright Nébula 2025. 
+        </footer>
+
+    </body>
+</html>
