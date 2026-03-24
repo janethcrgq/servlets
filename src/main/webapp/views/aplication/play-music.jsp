@@ -1,23 +1,23 @@
 <%-- 
     Document   : play-music
-    Created on : 5 mar 2026, 18:24:46
-    Author     : janethcristinagalvanquinonez
+    Created on : 5 mar 2026, 6:25:00 p.m.
+    Author     : martinbl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Nébula music</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-   <%@include file= "fragments/header.jspf" %>
-   
+    <%@include file="fragments/header.jspf" %>
     <main class="playlist-container">
         <header class="playlist-header">
             <div class="playlist-cover">
@@ -80,7 +80,7 @@
         </section>
     </main>
 
-     <%@include file="fragments/footer.jspf" %>
+    <%@include file="fragments/footer.jspf" %>
 
 </body>
 

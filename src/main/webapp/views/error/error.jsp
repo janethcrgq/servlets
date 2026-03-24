@@ -1,17 +1,18 @@
 <%-- 
     Document   : error
-    Created on : 5 mar 2026, 18:23:54
-    Author     : janethcristinagalvanquinonez
+    Created on : 5 mar 2026, 6:23:45 p.m.
+    Author     : martinbl
 --%>
 
-<%@page isErrorPage="True" contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import= "java.util.Date" %> 
+<%@page isErrorPage="true" contentType="text/html" pageEncoding="UTF-8" %>
+<%@page import="java.util.Date" %>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Error</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css">
 </head>
 
 <body>
@@ -28,22 +29,25 @@
         </div>
 
         <div class="form-group">
-            <label> Detalle de Error </label>
+            <p>
+                Ocurrió un problema al procesar tu solicitud.
+                Intenta nuevamente o vuelve al inicio.
+            </p>
+        </div>
+
+        <div class="form-group">
+            <label>Detalle del error:</label>
             <p id="error-message">
                 <%= exception != null && exception.getMessage() != null ? exception.getMessage() : "Ocurrio un error desconocido al cargar el recurso solicitado" %>
             </p>
-            Hola del error <%= new Date() %>
-             
-            
+            Hora del error: <%= new Date()%>
         </div>
 
-
-
-        <button class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/views/auth/iniciar-sesion.jsp'">
+        <button class="btn-primary" onclick="location.href='views/auth/iniciar-sesion.jsp'">
             Volver a iniciar sesión
         </button>
 
-        <button class="btn-secondary" onclick="location.href='${pageContext.request.contextPath}/index.jsp'">
+        <button class="btn-secondary" onclick="location.href='./index.jsp'">
             Ir al inicio
         </button>
 
@@ -53,5 +57,4 @@
 
 </body>
 </html>
-
 

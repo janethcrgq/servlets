@@ -1,10 +1,11 @@
 <%-- 
     Document   : registro
-    Created on : 5 mar 2026, 18:25:04
-    Author     : janethcristinagalvanquinonez
+    Created on : 5 mar 2026, 6:25:31 p.m.
+    Author     : martinbl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +30,6 @@
 
                   <div class="form-logo">
                     <img src="${pageContext.request.contextPath}/assets/img/nebula-03.svg" alt="Logo Nébula">
-                    
                 </div>
 
                 <div class="form-header"> 
@@ -68,8 +68,6 @@
                         pattern="[a-zA-Z]{3,10}-[0-9]{2,10}"
                         placeholder="Nebula-2025">
                 </div>
-
-               
 
                 <div class="form-group">
                     <label for="sel_cuenta">Cuenta</label>
@@ -118,7 +116,7 @@
         </section>
     </main>
 
-      <%@include file="/WEB-INF/jsp/fragments/footer.jspf"%>
+    <%@include file="/WEB-INF/jsp/fragments/footer.jspf" %>
 
 </body>
 </html>

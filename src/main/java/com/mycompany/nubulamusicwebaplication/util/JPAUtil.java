@@ -8,10 +8,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-/**
- *
- * @author janethcristinagalvanquinonez
- */
 public class JPAUtil {
 
     private static JPAUtil instance;

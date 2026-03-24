@@ -1,24 +1,18 @@
-<%-- 
-    Document   : tyc
-    Created on : 5 mar 2026, 18:25:19
-    Author     : janethcristinagalvanquinonez
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Términos y condiciones - Nébula</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/styles.css" />
 </head>
 
 <body>
-   <%@include file= "fragments/header.jspf" %>
-   
+    <%@include file="/WEB-INF/jsp/fragments/header.jspf" %>
     <header>
-        <img src="./imgs/header2.jpg" />
+        <img src="${pageContext.request.contextPath}/assets/img/header2.jpg" />
         <h1>Términos y condiciones</h1>
     </header>
     <main>
@@ -51,8 +45,7 @@
         </ol>
     </main>
 
-     <%@include file="fragments/footer.jspf" %>
-     
+     <%@include file="/WEB-INF/jsp/fragments/footer.jspf" %>
 </body>
 
 </html>

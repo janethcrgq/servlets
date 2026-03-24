@@ -4,13 +4,13 @@
  */
 package com.mycompany.nubulamusicwebaplication.service;
 
-import com.mycompany.nubulamusicwebaplication.models.Usuario;
+import com.mycompany.nubulamusicwebaplication.model.Usuario;
 import java.time.LocalDate;
 import java.util.List;
 
 /**
  *
- * @author janethcristinagalvanquinonez
+ * @author martinbl
  */
 public interface IUsuarioService {
      void registrar(String nombre,
@@ -34,7 +34,9 @@ public interface IUsuarioService {
 
     void eliminarUsuario(Long id);
     
-    List<Usuario> listaTop(int limite);
+    List<Usuario> listarTop(int limite);
+
     List<Usuario> listarPaginado(int pagina, int tamanioPagina);
-    Long contarUsuarios();    
+
+    long contarUsuarios();
 }

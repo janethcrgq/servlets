@@ -4,31 +4,30 @@
  */
 package com.mycompany.nubulamusicwebaplication.service;
 
-import com.mycompany.nubulamusicwebaplication.DAO.IUsuarioDAO;
-import com.mycompany.nubulamusicwebaplication.DAO.UsuarioDAO;
-
-import com.mycompany.nubulamusicwebaplication.models.Usuario;
+import com.mycompany.nubulamusicwebaplication.model.Usuario;
+import dao.IUsuarioDAO;
+import dao.UsuarioDAO;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
 /**
  *
- * @author janethcristinagalvanquinonez
+ * @author martinbl
  */
-public class UsuarioService implements IUsuarioService{
+public class UsuarioService implements IUsuarioService {
 
     private final IUsuarioDAO usuarioDAO = new UsuarioDAO();
 
     @Override
     public void registrar(String nombre,
-                          String correo,
-                          String contrasenia,
-                          String pseudonimo,
-                          String estado,
-                          String cuenta,
-                          LocalDate fechaNacimiento,
-                          boolean terminosAceptados) {
+            String correo,
+            String contrasenia,
+            String pseudonimo,
+            String estado,
+            String cuenta,
+            LocalDate fechaNacimiento,
+            boolean terminosAceptados) {
 
         validarNombre(nombre);
         validarCorreo(correo);
@@ -238,26 +237,28 @@ public class UsuarioService implements IUsuarioService{
             throw new IllegalArgumentException("Debes aceptar los términos y condiciones.");
         }
     }
-    
-    public List<Usuario> listaTop(int limite){
-        if(limite>0){
-            limite= 10;
+
+    @Override
+    public List<Usuario> listarTop(int limite) {
+        if (limite <= 0) {
+            throw new IllegalArgumentException("El límite debe ser mayor a cero.");
         }
-        return usuarioDAO.listaTop(limite);
+        return usuarioDAO.listarTop(limite);
     }
-    public List<Usuario> listarPaginado(int pagina, int tamanioPagina){
-        if(pagina<=0){
-            pagina= 1;
+
+    @Override
+    public List<Usuario> listarPaginado(int pagina, int tamanioPagina) {
+        if (pagina <= 0) {
+            throw new IllegalArgumentException("La página debe ser mayor a cero.");
         }
-        if(tamanioPagina <= 0){
-            tamanioPagina= 10;
+        if (tamanioPagina <= 0) {
+            throw new IllegalArgumentException("El tamaño de página debe ser mayor a cero.");
         }
-        
         return usuarioDAO.listarPaginado(pagina, tamanioPagina);
     }
-    public Long contarUsuarios(){
-        return usuarioDAO.contarUsuarios();
-        
-    }
-} 
 
+    @Override
+    public long contarUsuarios() {
+        return usuarioDAO.contarUsuarios();
+    }
+}
