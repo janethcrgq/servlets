@@ -25,16 +25,16 @@
         </header>
 
         <main class="about-main">
-            <a href="albums?action=new"> Crear Album </a>
+            <a href="album?action=new"> Crear Album </a>
             <hr><!-- comment -->
             <c:forEach var="album" items="${albums}">
                 <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; width: 300px;">
                     <img src="${album.imageUrl}" width="250">
                     <h3> ${album.titulo}</h3>
                     <p> ${album.descripcion}</p>
-                    <a href="albums?action=edit&id=${album.id}"> Editar </a>
+                    <a href="album?action=edit&id=${album.id}"> Editar </a>
                     
-                    <a href="albums?action=delete&id=${album.id}"
+                    <a href="album?action=delete&id=${album.id}"
                        onclick="return confirm('Eliminar Album?')"> 
                         Eliminar
                     </a>

@@ -9,6 +9,7 @@ import com.mycompany.nubulamusicwebaplication.model.Usuario;
 import com.mycompany.nubulamusicwebaplication.service.AlbumService;
 import com.mycompany.nubulamusicwebaplication.service.IAlbumService;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,6 +26,11 @@ import java.util.List;
  *
  * @author janethcristinagalvanquinonez
  */
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024, 
+    maxFileSize = 1024 * 1024 * 2,   
+    maxRequestSize = 1024 * 1024 * 5 
+)
 @WebServlet(name = "AlbumServlet", urlPatterns = {"/album"})
 public class AlbumServlet extends HttpServlet {
     
@@ -39,7 +45,7 @@ public class AlbumServlet extends HttpServlet {
         Usuario usuario= (Usuario) sesion.getAttribute("usuario");
         
         //lo vamos a usar para acceder a los JSP, un servlet  para verlos y otros para editar, eliminar y controlarlos 
-        String action= request.getParameter("accion");
+        String action= request.getParameter("action");
         if(action == null){
             action= "list";
         }
@@ -60,13 +66,13 @@ public class AlbumServlet extends HttpServlet {
                  case "delete":
                      Long deleteId= Long.parseLong(request.getParameter("id"));
                      albumService.eliminarAlbum(deleteId, usuario.getId());
-                     response.sendRedirect(request.getContextPath() + "/albums");
+                     response.sendRedirect(request.getContextPath() + "/album");
                      break;
                      
                  default:
                      List<Album> albums= albumService.obtenerAlbumsUsuario(usuario.getId());
                      request.setAttribute("albums", albums);
-                     request.getRequestDispatcher("/views/admin/mis-albums/jsp").forward(request, response);                       
+                     request.getRequestDispatcher("/views/admin/mis-albums.jsp").forward(request, response);                       
             }           
             
             
@@ -127,7 +133,7 @@ public class AlbumServlet extends HttpServlet {
                 
             }
             
-            response.sendRedirect(request.getContextPath() + "/albums");
+            response.sendRedirect(request.getContextPath() + "/album");
             
         } catch(Exception e){
             request.setAttribute("error", e.getMessage());

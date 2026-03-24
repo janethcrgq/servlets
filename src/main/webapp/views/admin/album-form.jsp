@@ -35,7 +35,7 @@
                 <p style="color: red"> ${error} </p>
             </c:if>
 
-            <form action="albums" method="post" enctype="multipart/form-data">
+            <form action="album" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="${album.id}">
 
                 <label>Titulo</label>
@@ -56,7 +56,7 @@
                 <button type="submit">Guardar</button>
             </form>
 
-            <a href="albums">Volver</a>
+            <a href="album">Volver</a>
 
 
 
